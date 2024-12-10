@@ -32,7 +32,7 @@ public class Pizza {
         this.totalPrice = this.price + this.tax;
     }
     String printOrderSummary(){
-        return String.format("Pizza Order:%nSize: %s%nType: %s%nQty: %d%nPrice: $%.2f%nTax: $%.2f%nTotal Price: $%.2f%n", size.name(), type.name(), quantity, price, tax, totalPrice);
+        return String.format("Pizza Order:%nSize: %s%nType: %s%nQty: %d%nPrice: $%.2f%nTax: $%.2f%nTotal Price: $%.2f%n", size, type, quantity, price, tax, totalPrice);
     }
     // getter and setter methods
 }

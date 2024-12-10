@@ -3,7 +3,7 @@ package employee_management;
 import java.time.LocalDate;
 
 public class Secretary extends DeptEmployee {
-    double overtimeHours;
+    private double overtimeHours;
 
     public Secretary(String name, int hYear, int hMonth, int hDay, double salary, double overtimeHours) {
         super(name, hYear, hMonth, hDay, salary);
