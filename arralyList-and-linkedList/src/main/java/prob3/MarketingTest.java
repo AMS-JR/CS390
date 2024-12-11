@@ -1,6 +1,7 @@
 package prob3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class MarketingTest {
@@ -69,4 +70,18 @@ public class MarketingTest {
             return result;
         });
     }
+    // Comparator Chaining Not in use , just for practice
+    public static void sortBySalesAmountUsingComparator(List<Marketing> marketers) {
+        marketers.sort(Comparator
+                .comparingDouble(Marketing::getSalesamount)
+                .thenComparing(Marketing::getEmployeename)
+                .thenComparing(Marketing::getProductname));
+    }
+    public static void sortByEmployeeNameUsingComparator(List<Marketing> marketers) {
+    marketers.sort(Comparator
+        .comparing(Marketing::getEmployeename)
+        .thenComparing(Marketing::getProductname)
+        .thenComparingDouble(Marketing::getSalesamount));
+    }
+
 }
