@@ -9,12 +9,12 @@ public class Prog5 {
     }
     public static int[] combine(int[] a, int[] b) {
         int[] combinedArray = new int[a.length+b.length];
-        int aLength = a.length;
+        int index = a.length;
         for (int i = 0; i < a.length; i++) {
             combinedArray[i] = a[i];
         }
-        for (int i = 0; i < b.length; i++,aLength++) {
-            combinedArray[aLength] = b[i];
+        for (int i = 0; i < b.length; i++,index++) {
+            combinedArray[index] = b[i];
         }
         return combinedArray;
     }

@@ -2,6 +2,7 @@ package prob3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Marketing {
 	private String employeename;
@@ -36,6 +37,19 @@ public class Marketing {
 
 	public void setSalesamount(double salesamount) {
 		this.salesamount = salesamount;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Marketing marketing = (Marketing) o;
+		return Double.compare(salesamount, marketing.salesamount) == 0 && Objects.equals(employeename, marketing.employeename) && Objects.equals(productname, marketing.productname);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(employeename, productname, salesamount);
 	}
 
 	@Override
