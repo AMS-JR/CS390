@@ -23,6 +23,9 @@ class Book {
     }
     @Override
     public String toString() {
-        return STR."Book{ISBN='\{ISBN}', title='\{title}', author='\{author}', isBorrowed=\{isBorrowed}}";
+        return "Book{ISBN=" + ISBN +
+                ", title=" + title +
+                ", author=" + author +
+                ", isBorrowed=" + isBorrowed + "}";
     }
 }
