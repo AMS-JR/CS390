@@ -1,4 +1,6 @@
-package lesson11.prob2;
+package Prob3;
+
+import java.util.HashMap;
 
 class Book {
     private String ISBN;
