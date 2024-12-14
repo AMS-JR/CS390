@@ -1,4 +1,4 @@
-package prob1;
+package Prob2;
 
 //DO NOT MODIFY IN ANY WAY
 public class Employee {
