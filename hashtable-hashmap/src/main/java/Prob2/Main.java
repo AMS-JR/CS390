@@ -16,7 +16,7 @@ public class Main {
 				                          "234112355",
 				                          "553667742",
 				                          "212341557",
-				                          "115513151");
+				                          "115513151", null);
 				
 		HashMap<String, Employee> h = new HashMap<String, Employee>() {
 			{
@@ -27,7 +27,10 @@ public class Main {
 				put("115513151",new Employee("Jonas", 76000, "115513151"));
 				put("113145657",new Employee("Rick", 92000, "113145657"));
 				put("342892138",new Employee("Ibu", 100000, "342892138"));
-				
+				put(null, new Employee("Alex", 88000, null));
+
+
+
 			}
 		};
 											
