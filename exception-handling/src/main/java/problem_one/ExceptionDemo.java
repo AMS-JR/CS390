@@ -2,6 +2,9 @@ package problem_one;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.ConsoleHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
 * Write your program to get the input of score in the range of 0 to 100 from
@@ -13,11 +16,15 @@ import java.util.Scanner;
 * 0-100.
 */
 public class ExceptionDemo {
+    private static final Logger LOG
+            = Logger.getLogger(
+                    ExceptionDemo.class.getName());
     public static void main(String[] args) {
+        configureLogger();
         Scanner scanner = new Scanner(System.in);
         while(true){
             try {
-                System.out.print("Enter a score (0-100): ");
+                System.out.println("Enter a score (0-100): ");
                 int score = scanner.nextInt();
 
                 // Check if the score is within the valid range
@@ -26,10 +33,10 @@ public class ExceptionDemo {
                 System.out.println("Your score is: " + score);
                 break;
             } catch (InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a number.");
+                LOG.warning("Invalid input. Please enter a number.");
                 scanner.nextLine(); // Clear the invalid input
             } catch (UnsupportedOperationException e) {
-                System.out.println(e.getMessage());
+                LOG.severe(e.getMessage());
             }
         }
         scanner.close();
@@ -39,6 +46,14 @@ public class ExceptionDemo {
         if (score < 0 || score > 100) {
             throw new UnsupportedOperationException("Score must be in the range of 0 to 100.");
         }
+    }
+    // Method to configure logger
+    private static void configureLogger() {
+        ConsoleHandler handler = new ConsoleHandler();
+        handler.setLevel(Level.ALL);
+        LOG.addHandler(handler);
+        LOG.setLevel(Level.ALL);
+        LOG.setUseParentHandlers(false); // Prevent duplicate logs
     }
 
 }
